@@ -6,7 +6,7 @@
 # Para terminar de ejecutar el script, tipear en la Terminal "Ctrl + Shift + c".
 
 
-# En vez de usar pdflatex directamente, llama a BetterPDFLaTeX, que modifica el output de pdflatex para hacerlo más legiblele.
+# En vez de usar pdflatex directamente, llama a BetterPDFLaTeX, que modifica el output de pdflatex para hacerlo más legible.
 # BetterPDFLaTeX colors pdflatex warnings in orange, errors in red and the "Output written ..." message in green. 
 # Duplicate lines (which appear right after each other) are skipped as well as those annoying only-bracket-lines, which pdflatex generates a lot. 
 # The --line-buffered parameter makes sure that the output is still "smooth" and not "laggy" due to buffering of grep. 
