@@ -1,4 +1,4 @@
-compiLatex
+compiLaTeX
 ==========
 
-Script que compila un archivo de LaTex automáticamente.
+Script que compila un archivo de LaTeX automáticamente.
