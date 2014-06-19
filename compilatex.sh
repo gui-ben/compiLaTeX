@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script que compila automáticamente un archivo de LaTex cada vez que se guarda.
-# Para usarlo, ejecutar en la Terminal "sh compilatex.sh" (el script y el archivo de LaTeX tienen que estar en la misma carpeta)
+# Para usarlo, ejecutar en la Terminal "sh compilatex.sh" (el script y el archivo de LaTeX tienen que estar en la misma carpeta).
 
 # Para terminar de ejecutar el script, tipear en la Terminal "Ctrl + Shift + c".
 # Si el archivo no compila, arreglar el error y escribir "quit" (o "q") en la Terminal. 
@@ -11,15 +11,15 @@
 read -p "Ingrese el nombre del archivo .TeX a compilar: " archivo
 
 
-pdflatex  $archivo.tex
-fecha=$(date -r $archivo.tex)
+pdflatex  "$archivo.tex"
+fecha=$(date -r "$archivo.tex")
 
 
 while true 
     do
-       if [ "$fecha" != "$(date -r $archivo.tex)" ]; then    
-       		pdflatex  $archivo.tex
-       		fecha=$(date -r $archivo.tex)
+       if [ "$fecha" != "$(date -r "$archivo.tex")" ]; then    
+       		pdflatex  "$archivo.tex"
+       		fecha=$(date -r "$archivo.tex")
        fi 
        sleep 1
     done
