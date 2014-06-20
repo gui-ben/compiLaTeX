@@ -37,8 +37,8 @@ fecha=$(date -r "$1.tex" +%T)                                      # Guarda en $
 while true 
     do
        if [ "$fecha" != "$(date -r "$1.tex" +%T)" ]; then    
-           	BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1.tex"
-         		 fecha=$(date -r "$1.tex" +%T)
+            BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1.tex"
+            fecha=$(date -r "$1.tex" +%T)
        fi 
        sleep 1	
     done
