@@ -31,7 +31,7 @@ GREP="grep --color=always --line-buffered"
 
 
 BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1.tex"    # Compila por primera vez el archivo.
-fecha=$(date -r "$1.tex" +%T)                                      # Guarda en $fecha la hora exácta  de la última modificación del archivo.
+fecha=$(date -r "$1.tex" +%T)                                      # Guarda en $fecha la hora exácta de la última modificación del archivo.
 
 
 while true 
