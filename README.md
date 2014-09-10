@@ -14,8 +14,7 @@ Si lo usan mucho, se lo pueden instalar para directarmente hacer desde cualquier
  1. Crear un directorio donde vamos a guardar nuestros scripts. Ejemplo: ~/bin (~ es un shortcut para /home/usuario).
     Poner el script en esa carpeta. Editamos las propiedades del archivo y marcamos "Permitir ejecutar como programa".
  2. Agregar esa carpeta al PATH (el lugar donde se indica dónde están los programas ejecutables). En el caso de Ubuntu, abrimos el archivo ~/.bashrc y agregamos las líneas:
-      PATH=$PATH:$HOME/bin
-      export PATH
+      ´export PATH=$PATH:~/bin ´
 
 
 
