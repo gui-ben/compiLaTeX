@@ -1,6 +1,18 @@
-compiLaTeX
-==========
+                   ,
+                  / \,,_  .'|
+               ,{{| /}}}}/_.'            _____________________________________________
+              }}}}` '{{'  '.            /                                             \
+            {{{{{    _   ;, \          /                                               \
+         ,}}}}}}    /o`\  ` ;)        |                                                |
+        {{{{{{   /           (        |                                                |
+        }}}}}}   |            \       |                                                |
+       {{{{{{{{   \            \      |                                                |
+       }}}}}}}}}   '.__      _  |     |         |
+                                      |                                               /
+                                       \_____________________________________________/
 
+
+# CompiLaTeX
 Script que compila un archivo de LaTeX automáticamente cada vez que se guarda.
 
 Para usarlo, ejecutar en la Terminal `sh compilatex nombreDelArchivo.tex` (el script y el archivo de LaTeX tienen que estar en la misma carpeta).
