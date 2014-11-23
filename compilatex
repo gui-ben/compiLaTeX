@@ -2,22 +2,9 @@
 
 # Script que compila automáticamente un archivo de LaTeX cada vez que se guarda.
 
-# Para usarlo, ejecutar en la Terminal "sh compilatex nombreDelArchivo" (el script y el archivo de LaTeX tienen que estar en la misma carpeta).
+# Para usarlo, ejecutar en la Terminal "sh compilatex archivo.tex" (el script y el archivo de LaTeX tienen que estar en la misma carpeta).
 
 # Para terminar de ejecutar el script, tipear en la Terminal "Ctrl + Shift + c".
-
-
-# El script en vez de usar pdflatex directamente, llama a BetterPDFLaTeX, que modifica el output de pdflatex para hacerlo más legible:
-
-# BetterPDFLaTeX colors pdflatex warnings in orange, errors in red and the "Output written ..." message in green. 
-# Duplicate lines (which appear right after each other) are skipped as well as those annoying only-bracket-lines, which pdflatex generates a lot. 
-# The --line-buffered parameter makes sure that the output is still "smooth" and not "laggy" due to buffering of grep. 
-# The --color=always (in contrast to --color=auto) preserves the colors of previous grep calls when piping them together like this.
-
-# You can put the script in your PATH with filename pdflatex, such that all Makefiles which call pdflatex use this colored version. 
-
-# Fuente de BetterPDFLaTeX: fw42.blogspot.com.ar/2012/08/colored-pdflatex-console-output.html
-
 
 BetterPDFLaTeX(){
 GREP="grep --color=always --line-buffered"
@@ -30,15 +17,15 @@ GREP="grep --color=always --line-buffered"
 } 
 
 
-BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1.tex"    # Compila por primera vez el archivo.
-fecha=$(date -r "$1.tex" +%T)                                      # Guarda en $fecha la hora exácta de la última modificación del archivo.
+BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1"    # Compila por primera vez el archivo.
+fecha=$(date -r "$1" +%T)                                      # Guarda en $fecha la hora exácta de la última modificación del archivo.
 
 
 while true 
     do
-       if [ "$fecha" != "$(date -r "$1.tex" +%T)" ]; then    
-            BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1.tex"
-            fecha=$(date -r "$1.tex" +%T)
+       if [ "$fecha" != "$(date -r "$1" +%T)" ]; then    
+            BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1"
+            fecha=$(date -r "$1" +%T)
        fi 
        sleep 1	
     done
