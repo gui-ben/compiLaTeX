@@ -21,7 +21,8 @@ Para terminar de ejecutar el script, tipear en la Terminal `Ctrl + Shift + c`.
 
 
 
-Si lo usan mucho, se lo pueden instalar para directarmente hacer desde cualquier lugar ` compilatex ubicación/del/archivo/nombreDelArchivo.tex`:
+Si lo usan mucho, se lo pueden instalar para directarmente hacer desde cualquier lugar 
+` compilatex ubicación/del/archivo/nombreDelArchivo.tex`:
 
  1. Crear un directorio donde vamos a guardar nuestros scripts. Ejemplo: ~/bin (~ es un shortcut para /home/usuario).
     Poner el script en esa carpeta. Editamos las propiedades del archivo y marcamos "Permitir ejecutar como programa".
