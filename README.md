@@ -32,12 +32,11 @@ Si lo usan mucho, se lo pueden instalar para directarmente hacer desde cualquier
 
 El script en vez de usar pdflatex directamente, llama a BetterPDFLaTeX, que modifica el output de pdflatex para hacerlo más legible:
 
-BetterPDFLaTeX colors pdflatex warnings in orange, errors in red and the "Output written ..." message in green.
-Duplicate lines (which appear right after each other) are skipped as well as those annoying only-bracket-lines, which pdflatex generates a lot.
-The --line-buffered parameter makes sure that the output is still "smooth" and not "laggy" due to buffering of grep.
-The --color=always (in contrast to --color=auto) preserves the colors of previous grep calls when piping them together like this.
+> BetterPDFLaTeX colors pdflatex warnings in orange, errors in red and the "Output written ..." message in green.
+> Duplicate lines (which appear right after each other) are skipped as well as those annoying only-bracket-lines, which pdflatex generates a lot.
+> The --line-buffered parameter makes sure that the output is still "smooth" and not "laggy" due to buffering of grep.
+> The --color=always (in contrast to --color=auto) preserves the colors of previous grep calls when piping them together like this.
 
-You can put the script in your PATH with filename pdflatex, such that all Makefiles which call pdflatex use this colored version.
+> You can put the script in your PATH with filename pdflatex, such that all Makefiles which call pdflatex use this colored version.
 
-Fuente de BetterPDFLaTeX: fw42.blogspot.com.ar/2012/08/colored-pdflatex-console-output.html
-
+[Fuente de BetterPDFLaTeX] (fw42.blogspot.com.ar/2012/08/colored-pdflatex-console-output.html)
