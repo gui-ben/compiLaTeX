@@ -2,7 +2,8 @@
 
 # Script que compila automáticamente un archivo de LaTeX cada vez que se guarda.
 
-# Para usarlo, ejecutar en la Terminal "sh compilatex archivo.tex" (el script y el archivo de LaTeX tienen que estar en la misma carpeta).
+# Para usarlo, ejecutar en la Terminal "sh compilatex archivoACompilar.tex" (el script y el archivo de LaTeX tienen que estar en la misma carpeta).
+# Si quiero editar un archivo, pero compilar otro (ej: estoy editando caratula.tex pero quiero compilar informe.tex), hacemos: "sh compilatex informe.tex caratula.tex"
 
 # Para terminar de ejecutar el script, tipear en la Terminal "Ctrl + Shift + c".
 
@@ -16,16 +17,21 @@ GREP="grep --color=always --line-buffered"
  | uniq
 } 
 
+if [ $# = 2 ]; then                                            # Si tengo 2 argumentos, entonces el archivo que estoy editando es el segundo.
+	archivoAEditar="$2"	
+else
+        archivoAEditar="$1" 
+fi
 
-BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1"    # Compila por primera vez el archivo.
-fecha=$(date -r "$1" +%T)                                      # Guarda en $fecha la hora exácta de la última modificación del archivo.
+fecha=$(date -r "$archivoAEditar" +%T)                         # Guarda en $fecha la hora exácta de la última modificación del archivo que estamos editando.
 
+BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1"    # Compila por primera vez el archivo (siempre es el primer parámetro).
 
 while true 
     do
-       if [ "$fecha" != "$(date -r "$1" +%T)" ]; then    
-            BetterPDFLaTeX -interaction=nonstopmode -halt-on-error "$1"
-            fecha=$(date -r "$1" +%T)
+       if [ "$fecha" != "$(date -r "$archivoAEditar" +%T)" ]; then    
+            BetterPDFLaTeX -iteraction=nonstopmode -halt-on-error "$1"
+            fecha=$(date -r "$archivoAEditar" +%T)
        fi 
-       sleep 1	
+       sleep 0.5
     done
